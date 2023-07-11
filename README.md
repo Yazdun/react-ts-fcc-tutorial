@@ -7,7 +7,7 @@
     <img src="./public/fcc.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">TypeScript Tutorial for React Developers</h3>
+<h3 align="center">TypeScript Handbook for React Developers – How to Build a Type-Safe Todo App</h3>
 
   <p align="center">
     A Step-By-Step Tutorial for Beginners
