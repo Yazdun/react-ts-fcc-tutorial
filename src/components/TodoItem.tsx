@@ -89,7 +89,10 @@ export const TodoItem = (props: { todo: Todo }) => {
                 todo.status === 'completed' ? 'line-through' : 'none',
             }}
           >
-            {todo.text}
+            {todo.text}  
+          </motion.span>
+          <motion.span style={{textAlign:'right'}}>
+            created  on {todo.date}
           </motion.span>
           <div className="flex justify-between gap-5 text-white">
             <button onClick={() => handleStatusUpdate(todo.id)}>
@@ -107,7 +110,7 @@ export const TodoItem = (props: { todo: Todo }) => {
             </button>
             <div className="flex items-center gap-2">
               <button
-                onClick={() => handleEdit(todo.id, todo.text)}
+                onClick={() => handleEdit(todo.id, todo.text,)}
                 className="flex items-center gap-1 "
               >
                 <FaRegEdit />

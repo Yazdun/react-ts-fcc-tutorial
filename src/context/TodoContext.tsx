@@ -13,6 +13,7 @@ interface TodoContextProps {
 export interface Todo {
   id: string
   text: string
+  date: Date | any
   status: 'undone' | 'completed'
 }
 
@@ -28,6 +29,7 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
     const newTodo: Todo = {
       id: nanoid(),
       text,
+      date: new Date().toLocaleTimeString(),
       status: 'undone',
     }
 
@@ -44,7 +46,7 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
     setTodos(prevTodos => {
       return prevTodos.map(todo => {
         if (todo.id === id) {
-          return { ...todo, text }
+          return { ...todo, text, }
         }
         return todo
       })
