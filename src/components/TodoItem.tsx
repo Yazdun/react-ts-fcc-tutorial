@@ -9,6 +9,8 @@ import { RiDeleteBin7Line } from 'react-icons/ri'
 import { toast } from 'react-hot-toast'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
+// import { Searchbar } from './Searchbar'
+
 
 export const TodoItem = (props: { todo: Todo }) => {
   const { todo } = props
@@ -57,6 +59,7 @@ export const TodoItem = (props: { todo: Todo }) => {
   }
 
   return (
+    
     <motion.li
       layout
       key={todo.id}
@@ -64,7 +67,9 @@ export const TodoItem = (props: { todo: Todo }) => {
         'p-5 rounded-xl bg-zinc-900',
         todo.status === 'completed' && 'bg-opacity-50 text-zinc-500',
       )}
-    >
+    > 
+              {/* <Searchbar todo={props.todo}/> */}
+
       {editingTodoId === todo.id ? (
         <motion.div layout className="flex gap-2">
           <Input

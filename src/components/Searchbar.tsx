@@ -9,14 +9,17 @@ export function Searchbar(props:{todo : Todo}){
     let handler = (e: { target: { value: string; }; })=>{
         setText(e.target.value.toLowerCase())
     }
-    // let filterData = props?.filter((e)=>{
-    //     if(){
+    const newArray:any= []
+    newArray.push(todo)
+    let filterData = newArray?.filter((e: { text: { toLowerCase: () => { (): any; new(): any; includes: { (): any; new(): any; }; }; }; })=>{
+        if(text == ''){
+            return 'Please specify task'
 
-    //     }
-    //     else{
-    //         return e.text.toLowerCase().includes(data?.)
-    //     }
-    // })
+        }
+        else{
+            return e.text.toLowerCase().includes()
+        }
+    })
     return(
        <div className="Search">
         <Input
@@ -26,7 +29,8 @@ export function Searchbar(props:{todo : Todo}){
        onChange={handler}
         />
         <li>{text}</li>
-        {props.todo.text==text?
+      
+        {todo.text==text?
         <motion.div layout className="flex gap-2">
         {/* <Input
           type="text"
@@ -39,7 +43,9 @@ export function Searchbar(props:{todo : Todo}){
         >
           Update
         </button> */}
-        {props.todo.text}
+          <button onClick={filterData}>
+
+</button>
       </motion.div>
         :'task not found'}
        </div>
