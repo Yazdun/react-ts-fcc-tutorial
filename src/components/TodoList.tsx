@@ -19,7 +19,7 @@ export const TodoList = () => {
   return (
     <ul className="grid max-w-lg gap-2 px-5 m-auto">
       {todos.map(todo => (
-        <TodoItem todo={todo} key={todo.id} />
+        <TodoItem todo={todo} key={todo.id}/>
       ))}
     </ul>
   )

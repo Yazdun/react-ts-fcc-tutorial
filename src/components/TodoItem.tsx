@@ -9,6 +9,8 @@ import { RiDeleteBin7Line } from 'react-icons/ri'
 import { toast } from 'react-hot-toast'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
+// import { Searchbar } from './Searchbar'
+
 
 export const TodoItem = (props: { todo: Todo }) => {
   const { todo } = props
@@ -57,6 +59,7 @@ export const TodoItem = (props: { todo: Todo }) => {
   }
 
   return (
+    
     <motion.li
       layout
       key={todo.id}
@@ -64,7 +67,9 @@ export const TodoItem = (props: { todo: Todo }) => {
         'p-5 rounded-xl bg-zinc-900',
         todo.status === 'completed' && 'bg-opacity-50 text-zinc-500',
       )}
-    >
+    > 
+              {/* <Searchbar todo={props.todo}/> */}
+
       {editingTodoId === todo.id ? (
         <motion.div layout className="flex gap-2">
           <Input
@@ -89,7 +94,10 @@ export const TodoItem = (props: { todo: Todo }) => {
                 todo.status === 'completed' ? 'line-through' : 'none',
             }}
           >
-            {todo.text}
+            {todo.text}  
+          </motion.span>
+          <motion.span style={{textAlign:'right'}}>
+            created  on {todo.date}
           </motion.span>
           <div className="flex justify-between gap-5 text-white">
             <button onClick={() => handleStatusUpdate(todo.id)}>
@@ -107,7 +115,7 @@ export const TodoItem = (props: { todo: Todo }) => {
             </button>
             <div className="flex items-center gap-2">
               <button
-                onClick={() => handleEdit(todo.id, todo.text)}
+                onClick={() => handleEdit(todo.id, todo.text,)}
                 className="flex items-center gap-1 "
               >
                 <FaRegEdit />
