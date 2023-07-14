@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { useTodo } from '../context'
 import { Input } from './Input'
+import { Searchbar } from './Searchbar'
 
 export const AddTodo = () => {
   const [input, setInput] = useState<string>('')
@@ -27,6 +28,7 @@ export const AddTodo = () => {
 
   return (
     <form onSubmit={handleSubmission}>
+      {/* <Searchbar todo={undefined}/> */}
       <div className="flex items-center w-full max-w-lg gap-2 p-5 m-auto">
         <Input
           ref={inputRef}
