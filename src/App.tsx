@@ -1,11 +1,16 @@
-import { TodoList, AddTodo } from './components'
 import { Toaster } from 'react-hot-toast'
+import { AddTodo, TodoList } from './components'
 
 function App() {
+  // 設定 todos 來儲存待辦事項
+
   return (
-    <div className="flex items-center justify-center h-screen">
-      <h1 className="text-5xl font-bold">Todo App Tutorial</h1>
-    </div>
+    <section>
+      <Toaster position="bottom-center" />
+      {/* Toast 是用於顯示加入提示的套件s */}
+      <AddTodo />
+      <TodoList />
+    </section>
   )
 }
 
